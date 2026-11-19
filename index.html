@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Trades Chapter | Network. Capital. Leads. Growth.</title>
+<meta name="description" content="The Trades Chapter is the business network for the skilled trades — access to capital, a referral network, training, leads, and an AI Executive Team to start and grow your business.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B2A4A; --navy-deep:#111C33; --navy-soft:#26375C;
+    --gold:#B8860B; --gold-bright:#D4A017; --gold-pale:#F6EBD0;
+    --ink:#1A1F2B; --muted:#5B6474; --line:#E3E6EC; --bg:#F7F8FA; --white:#fff;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:'Oswald','Arial Narrow',sans-serif;text-transform:uppercase;letter-spacing:.5px;line-height:1.1}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+  .eyebrow{display:inline-block;font-family:'Oswald',sans-serif;font-size:.85rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+  .section{padding:90px 0}
+  .section-head{max-width:760px;margin-bottom:48px}
+  .section-head h2{font-size:clamp(2rem,4.5vw,3rem);color:var(--navy);margin-bottom:14px}
+  .section-head p{color:var(--muted);font-size:1.08rem}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:1rem;padding:14px 26px;border-radius:8px;transition:.2s;cursor:pointer;border:2px solid transparent}
+  .btn-gold{background:var(--gold);color:#fff}
+  .btn-gold:hover{background:var(--gold-bright)}
+  .btn-ghost{border-color:rgba(255,255,255,.5);color:#fff}
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}
+  .btn-navy{background:var(--navy);color:#fff}
+  .btn-navy:hover{background:var(--navy-soft)}
+
+  /* NAV */
+  nav{position:sticky;top:0;z-index:50;background:rgba(17,28,51,.97);backdrop-filter:blur(6px);border-bottom:1px solid rgba(184,134,11,.35)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:12px;color:#fff}
+  .brand-text{font-family:'Oswald',sans-serif;text-transform:uppercase;line-height:1}
+  .brand-text b{display:block;font-size:1.25rem;letter-spacing:1.5px}
+  .brand-text small{font-size:.62rem;letter-spacing:2px;color:var(--gold-bright)}
+  .nav-links{display:flex;gap:24px;align-items:center}
+  .nav-links a{color:#D9DEE8;font-size:.9rem;font-weight:500}
+  .nav-links a:hover{color:var(--gold-bright)}
+  .nav-links .btn{padding:10px 18px;font-size:.9rem;color:#fff}
+  .burger{display:none;background:none;border:0;color:#fff;font-size:1.7rem;cursor:pointer}
+  @media(max-width:960px){
+    .nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:var(--navy-deep);flex-direction:column;padding:20px;gap:16px;border-bottom:2px solid var(--gold)}
+    .nav-links.open{display:flex}
+    .burger{display:block}
+  }
+
+  /* HERO */
+  .hero{position:relative;background:radial-gradient(1200px 500px at 85% -10%,rgba(184,134,11,.28),transparent 60%),linear-gradient(160deg,var(--navy-deep),var(--navy) 60%,var(--navy-soft));color:#fff;padding:100px 0 90px;overflow:hidden}
+  .hero::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;pointer-events:none}
+  .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+  .hero h1{font-size:clamp(2.6rem,6.5vw,4.6rem);margin-bottom:20px}
+  .hero h1 span{color:var(--gold-bright)}
+  .hero p.lead{font-size:1.2rem;color:#D3D9E5;max-width:600px;margin-bottom:32px}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+  .paths{display:grid;gap:14px}
+  .path{display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-left:4px solid var(--gold);border-radius:12px;padding:20px}
+  .path .num{font-family:'Oswald',sans-serif;font-size:1.8rem;color:var(--gold-bright);line-height:1}
+  .path h3{font-size:1.25rem;margin-bottom:4px}
+  .path p{color:#C9D0DD;font-size:.95rem}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.hero{padding:70px 0}}
+
+  /* TRADES STRIP */
+  .strip{background:var(--gold);overflow:hidden;white-space:nowrap;padding:14px 0}
+  .strip-track{display:inline-block;animation:scroll 40s linear infinite}
+  .strip span{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:2px;color:var(--navy-deep);font-size:1.05rem;margin:0 22px}
+  .strip span::after{content:"◆";margin-left:44px;font-size:.6rem;vertical-align:middle;opacity:.6}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* CARDS */
+  .grid{display:grid;gap:22px}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:980px){.g3,.g4{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:620px){.g3,.g4{grid-template-columns:1fr}}
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:.25s}
+  .card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(27,42,74,.12);border-color:rgba(184,134,11,.5)}
+  .card .ico{width:50px;height:50px;border-radius:12px;background:var(--gold-pale);display:grid;place-items:center;font-size:1.5rem;margin-bottom:16px}
+  .card h3{font-size:1.3rem;color:var(--navy);margin-bottom:8px}
+  .card p{color:var(--muted);font-size:.97rem}
+  .bg-soft{background:var(--bg)}
+
+  /* AI TEAM */
+  .ai{background:linear-gradient(170deg,var(--navy-deep),var(--navy));color:#fff;position:relative;overflow:hidden}
+  .ai::before{content:"";position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(212,160,23,.18),transparent 65%);top:-200px;right:-200px}
+  .ai .section-head h2{color:#fff}
+  .ai .section-head p{color:#C9D0DD}
+  .badge{display:inline-block;background:var(--gold);color:#fff;font-family:'Oswald',sans-serif;letter-spacing:1.5px;text-transform:uppercase;font-size:.75rem;padding:5px 12px;border-radius:30px;margin-bottom:14px}
+  .role{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:24px;position:relative;z-index:1;transition:.25s}
+  .role:hover{border-color:var(--gold-bright);background:rgba(255,255,255,.08)}
+  .role .ico{font-size:1.6rem;margin-bottom:10px}
+  .role h3{font-size:1.15rem;color:var(--gold-bright);margin-bottom:6px}
+  .role p{color:#C9D0DD;font-size:.93rem}
+  .ai-cta{position:relative;z-index:1;margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .ai-box{border-radius:var(--radius);padding:30px;border:1px solid rgba(212,160,23,.5);background:rgba(184,134,11,.1)}
+  .ai-box h3{font-size:1.4rem;margin-bottom:10px}
+  .ai-box p{color:#D3D9E5;margin-bottom:18px}
+  .ai-box ul{list-style:none;margin-bottom:20px}
+  .ai-box li{padding:5px 0 5px 26px;position:relative;color:#E2E7F0}
+  .ai-box li::before{content:"✓";position:absolute;left:0;color:var(--gold-bright);font-weight:700}
+  @media(max-width:800px){.ai-cta{grid-template-columns:1fr}}
+
+  /* REFERRAL */
+  .ref-wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .ref-hub{position:relative;aspect-ratio:1;max-width:460px;margin:0 auto;width:100%}
+  .hub-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:36%;aspect-ratio:1;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;text-align:center;font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:clamp(.8rem,2.2vw,1.05rem);line-height:1.15;border:4px solid var(--gold);box-shadow:0 0 0 10px rgba(184,134,11,.12)}
+  .hub-node{position:absolute;transform:translate(-50%,-50%);background:#fff;border:2px solid var(--gold);color:var(--navy);border-radius:30px;padding:7px 13px;font-size:clamp(.7rem,1.8vw,.85rem);font-weight:600;white-space:nowrap;box-shadow:0 6px 16px rgba(27,42,74,.1)}
+  .ref-hub svg{position:absolute;inset:0;width:100%;height:100%}
+  .steps{counter-reset:s;list-style:none;margin-top:26px}
+  .steps li{counter-increment:s;position:relative;padding:0 0 22px 58px}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;background:var(--gold);color:#fff;font-family:'Oswald',sans-serif;font-size:1.2rem;display:grid;place-items:center}
+  .steps h4{font-size:1.1rem;color:var(--navy);margin-bottom:2px}
+  .steps p{color:var(--muted);font-size:.95rem}
+  @media(max-width:900px){.ref-wrap{grid-template-columns:1fr}}
+
+  /* TIERS */
+  .tier{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px 26px;display:flex;flex-direction:column;position:relative}
+  .tier.featured{border:2px solid var(--gold);box-shadow:0 18px 40px rgba(184,134,11,.18)}
+  .tier .tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--gold);color:#fff;font-family:'Oswald',sans-serif;font-size:.75rem;letter-spacing:1.5px;text-transform:uppercase;padding:4px 14px;border-radius:30px;white-space:nowrap}
+  .tier h3{font-size:1.35rem;color:var(--navy)}
+  .tier .who{color:var(--muted);font-size:.9rem;margin:4px 0 16px}
+  .price{font-family:'Oswald',sans-serif;font-size:2.6rem;color:var(--navy);line-height:1}
+  .price small{font-size:1rem;color:var(--muted);font-family:'Inter',sans-serif}
+  .tier ul{list-style:none;margin:22px 0 26px;flex:1}
+  .tier li{padding:6px 0 6px 24px;position:relative;font-size:.94rem;border-bottom:1px dashed var(--line)}
+  .tier li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700}
+  .tier .btn{justify-content:center}
+
+  /* MEETINGS */
+  .meet{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+  .agenda{background:var(--navy);color:#fff;border-radius:var(--radius);padding:34px}
+  .agenda h3{color:var(--gold-bright);font-size:1.4rem;margin-bottom:18px}
+  .agenda-row{display:flex;gap:16px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+  .agenda-row:last-child{border:0}
+  .agenda-row b{font-family:'Oswald',sans-serif;color:var(--gold-bright);min-width:62px}
+  .agenda-row span{color:#D3D9E5}
+  .topics{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+  .topics span{background:var(--gold-pale);color:var(--navy);font-weight:600;font-size:.88rem;padding:8px 14px;border-radius:30px}
+  @media(max-width:900px){.meet{grid-template-columns:1fr}}
+
+  /* JOIN */
+  .join{background:linear-gradient(135deg,var(--gold),#9A7009);color:#fff}
+  .join-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .join h2{font-size:clamp(2rem,4.5vw,3rem);margin-bottom:14px}
+  .join p{color:#FFF6E0;font-size:1.08rem}
+  form{background:#fff;border-radius:var(--radius);padding:30px;color:var(--ink);box-shadow:0 20px 50px rgba(0,0,0,.2)}
+  form h3{color:var(--navy);font-size:1.4rem;margin-bottom:16px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  label{display:block;font-size:.82rem;font-weight:600;color:var(--navy);margin:10px 0 5px}
+  input,select,textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font:inherit;font-size:.95rem;background:var(--bg)}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--gold);border-color:transparent;background:#fff}
+  .checks{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:4px}
+  .checks label{display:flex;gap:8px;align-items:center;font-weight:500;color:var(--ink);margin:0;font-size:.9rem}
+  .checks input{width:auto}
+  form .btn{width:100%;justify-content:center;margin-top:18px}
+  .join .form-note{font-size:.8rem;color:var(--muted);margin-top:10px;text-align:center}
+  @media(max-width:900px){.join-grid{grid-template-columns:1fr}}
+  @media(max-width:480px){.row2,.checks{grid-template-columns:1fr}}
+
+  .join-grid{align-items:start}
+  .next{list-style:none;counter-reset:n;margin:28px 0}
+  .next li{counter-increment:n;position:relative;padding:0 0 18px 54px}
+  .next li::before{content:counter(n);position:absolute;left:0;top:0;width:38px;height:38px;border-radius:50%;background:#fff;color:var(--gold);font-family:'Oswald',sans-serif;font-size:1.15rem;display:grid;place-items:center}
+  .next b{display:block;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:1px;font-size:1.1rem}
+  .next span{color:#FFF6E0;font-size:.97rem}
+  .founding{background:rgba(255,255,255,.14);border-left:4px solid #fff;padding:14px 18px;border-radius:8px;font-size:.97rem!important}
+  .fs-title{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:1.5px;color:var(--gold);font-size:.95rem;margin:22px 0 2px;padding-bottom:6px;border-bottom:2px solid var(--gold-pale)}
+  form .consent{display:flex;gap:10px;align-items:flex-start;font-weight:500;color:var(--muted);font-size:.82rem;margin-top:18px;line-height:1.4}
+  form .consent input{width:auto;margin-top:3px}
+  textarea{resize:vertical}
+  /* FOOTER */
+  footer{background:var(--navy-deep);color:#AEB7C8;padding:60px 0 30px;font-size:.92rem}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px;margin-bottom:40px}
+  footer h4{color:#fff;font-size:1rem;margin-bottom:14px;letter-spacing:1.5px}
+  footer ul{list-style:none}
+  footer li{padding:4px 0}
+  footer a:hover{color:var(--gold-bright)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.82rem}
+  .disclaimer{font-size:.78rem;color:#7E889B;margin-top:14px;max-width:900px}
+  @media(max-width:800px){.foot-grid{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="wrap nav-in">
+    <a href="#top" class="brand" aria-label="The Trades Chapter home">
+      <svg width="44" height="44" viewBox="0 0 64 64" aria-hidden="true">
+        <path d="M32 3 58 17v30L32 61 6 47V17Z" fill="#1B2A4A" stroke="#D4A017" stroke-width="3"/>
+        <path d="M18 36c0-8 6-14 14-14s14 6 14 14" fill="none" stroke="#D4A017" stroke-width="4" stroke-linecap="round"/>
+        <rect x="14" y="36" width="36" height="6" rx="2" fill="#D4A017"/>
+        <rect x="29" y="18" width="6" height="10" rx="2" fill="#D4A017"/>
+      </svg>
+      <div class="brand-text"><b>The Trades Chapter</b><small>Build · Connect · Grow</small></div>
+    </a>
+    <button class="burger" aria-label="Menu" onclick="document.getElementById('links').classList.toggle('open')">☰</button>
+    <div class="nav-links" id="links">
+      <a href="#ai-team">AI Executive Team</a>
+      <a href="#capital">Capital</a>
+      <a href="#referrals">Referral Network</a>
+      <a href="#training">Training</a>
+      <a href="#membership">Membership</a>
+      <a href="#meetings">Meetings</a>
+      <a href="#join" class="btn btn-gold">Join Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">A chapter of the National Small Business Chamber of Commerce</span>
+      <h1>Built by the trades.<br><span>Built for the trades.</span></h1>
+      <p class="lead">The business network for contractors and skilled tradespeople. Get connected, get access to capital, get leads, and run your company with your own AI Executive Team behind you.</p>
+      <div class="hero-ctas">
+        <a href="#join" class="btn btn-gold">Join the Chapter →</a>
+        <a href="#ai-team" class="btn btn-ghost">Meet Your AI Team</a>
+      </div>
+    </div>
+    <div class="paths">
+      <a href="#start" class="path"><div class="num">01</div><div><h3>Start Your Business</h3><p>Licensing, insurance, setup, and your first jobs, with mentors who've done it.</p></div></a>
+      <a href="#grow" class="path"><div class="num">02</div><div><h3>Grow Your Business</h3><p>Capital, crews, systems, and an AI Executive Team so you can scale without burning out.</p></div></a>
+      <a href="#leads" class="path"><div class="num">03</div><div><h3>Get Leads</h3><p>Referrals from real estate, mortgage, and insurance pros, plus other trades and AI lead generation.</p></div></a>
+    </div>
+  </div>
+</header>
+
+<!-- TRADES STRIP -->
+<div class="strip" aria-hidden="true">
+  <div class="strip-track">
+    <span>General Contractors</span><span>Electricians</span><span>Plumbers</span><span>HVAC</span><span>Roofers</span><span>Carpenters</span><span>Masonry &amp; Concrete</span><span>Framers</span><span>Painters</span><span>Landscapers</span><span>Flooring</span><span>Welders</span><span>Solar</span><span>Handymen</span><span>Demolition</span><span>Drywall</span>
+    <span>General Contractors</span><span>Electricians</span><span>Plumbers</span><span>HVAC</span><span>Roofers</span><span>Carpenters</span><span>Masonry &amp; Concrete</span><span>Framers</span><span>Painters</span><span>Landscapers</span><span>Flooring</span><span>Welders</span><span>Solar</span><span>Handymen</span><span>Demolition</span><span>Drywall</span>
+  </div>
+</div>
+
+<!-- WHY JOIN: START / GROW / LEADS -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Why join</span>
+      <h2>You're great at the work. We help with the business.</h2>
+      <p>Most tradespeople never got taught the business side: pricing, cash flow, marketing, hiring, financing. The Trades Chapter puts everything you need in one room and one network.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card" id="start">
+        <div class="ico">🚀</div>
+        <h3>Start</h3>
+        <p>Step-by-step guidance on forming your company, licensing, insurance and bonding, contracts, pricing your work, and getting your first customers through the door.</p>
+      </div>
+      <div class="card" id="grow">
+        <div class="ico">📈</div>
+        <h3>Grow</h3>
+        <p>Access to capital, business mentoring, crew hiring and training, and an AI Executive Team that runs sales, marketing, and the books so you can stay on the job.</p>
+      </div>
+      <div class="card" id="leads">
+        <div class="ico">🎯</div>
+        <h3>Get Leads</h3>
+        <p>A working referral network with real estate agents, lenders, insurance pros, property managers, and other trades, plus AI-powered lead generation and follow-up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI EXECUTIVE TEAM -->
+<section class="section ai" id="ai-team">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="badge">Featured · Powered by AI Cooperative Group</span>
+      <h2>Your AI Executive Team</h2>
+      <p>Big companies have a sales manager, a CFO, and a marketing department. Now you do too. Our AI Executive Team works alongside you every day to generate business, follow up on every lead, and keep your numbers straight, so you get your time back.</p>
+    </div>
+    <div class="grid g4">
+      <div class="role"><div class="ico">🤝</div><h3>Sales Manager</h3><p>Tracks every estimate, follows up automatically, and helps turn more bids into signed jobs.</p></div>
+      <div class="role"><div class="ico">🎯</div><h3>Lead Manager</h3><p>Captures leads from your site, socials, and referrals, then routes and nurtures them so nothing falls through the cracks.</p></div>
+      <div class="role"><div class="ico">📞</div><h3>Sales Dialer</h3><p>Calls back, books appointments, and reactivates past customers while you're on the job site.</p></div>
+      <div class="role"><div class="ico">💵</div><h3>CFO</h3><p>Keeps your job costing, invoices, and cash flow organized so you always know which jobs actually make money.</p></div>
+      <div class="role"><div class="ico">📱</div><h3>Social Media Manager</h3><p>Turns your before-and-after photos into posts that keep your name in front of homeowners every week.</p></div>
+      <div class="role"><div class="ico">🌐</div><h3>Marketing Director</h3><p>Your website, Google profile, reviews, and ads, working together to bring in the right kind of jobs.</p></div>
+      <div class="role"><div class="ico">🏦</div><h3>Capital Manager</h3><p>Gets your paperwork lender-ready and matches you to the right financing when it's time to grow.</p></div>
+      <div class="role"><div class="ico">🏛️</div><h3>Gov Contracts Manager</h3><p>Finds public bids and set-aside opportunities that fit your trade and helps you get registered to compete.</p></div>
+    </div>
+    <div class="ai-cta">
+      <div class="ai-box">
+        <h3>Included with membership</h3>
+        <p>Every member gets access to AI tools and training through our partner, AI Cooperative Group.</p>
+        <ul>
+          <li>Monthly AI Clinic for contractors</li>
+          <li>Ready-to-use estimate, follow-up, and review templates</li>
+          <li>Hands-on help setting up your first AI teammate</li>
+        </ul>
+        <a href="#join" class="btn btn-gold">Join the Chapter</a>
+      </div>
+      <div class="ai-box">
+        <h3>Done-for-you setup</h3>
+        <p>Want the whole team running for you? We'll build and launch it for your company.</p>
+        <ul>
+          <li>Website, Google profile, and lead capture</li>
+          <li>Automated follow-up and appointment booking</li>
+          <li>Social media content from your job photos</li>
+        </ul>
+        <a href="#join" class="btn btn-ghost">Request a Consultation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPITAL -->
+<section class="section bg-soft" id="capital">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Access to capital</span>
+      <h2>Money to take on bigger jobs</h2>
+      <p>Trucks, tools, payroll, materials. Growing a trade business takes cash. We connect members with lenders who understand contractors and help you get your file ready before you apply.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card"><div class="ico">🏦</div><h3>SBA Loans</h3><p>Guidance through SBA loan programs for working capital, equipment, real estate, and buying an existing business.</p></div>
+      <div class="card"><div class="ico">🚚</div><h3>Equipment &amp; Vehicles</h3><p>Financing for trucks, vans, machinery, and tools so you can say yes to more work.</p></div>
+      <div class="card"><div class="ico">💳</div><h3>Lines of Credit</h3><p>Flexible working capital to cover materials and payroll between draws and final payments.</p></div>
+      <div class="card"><div class="ico">🛡️</div><h3>Bonding &amp; Insurance</h3><p>Introductions to bonding and insurance professionals so you qualify for larger commercial and public jobs.</p></div>
+      <div class="card"><div class="ico">🏠</div><h3>Investor &amp; Flip Funding</h3><p>Private and commercial lending for members who want to buy, rehab, and build their own projects.</p></div>
+      <div class="card"><div class="ico">📊</div><h3>Get Lender-Ready</h3><p>Credit building, clean books, and a complete loan package, so the answer is yes the first time.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- REFERRALS -->
+<section class="section" id="referrals">
+  <div class="wrap ref-wrap">
+    <div class="ref-hub" aria-hidden="true">
+      <svg viewBox="0 0 100 100"><g stroke="#B8860B" stroke-width=".4" stroke-dasharray="1.5 1.5">
+        <line x1="50" y1="50" x2="50" y2="8"/><line x1="50" y1="50" x2="86" y2="29"/><line x1="50" y1="50" x2="86" y2="71"/>
+        <line x1="50" y1="50" x2="50" y2="92"/><line x1="50" y1="50" x2="14" y2="71"/><line x1="50" y1="50" x2="14" y2="29"/></g></svg>
+      <div class="hub-center">Your<br>Business</div>
+      <div class="hub-node" style="left:50%;top:8%">Real Estate Agents</div>
+      <div class="hub-node" style="left:86%;top:29%">Mortgage Lenders</div>
+      <div class="hub-node" style="left:86%;top:71%">Insurance Pros</div>
+      <div class="hub-node" style="left:50%;top:92%">Property Managers</div>
+      <div class="hub-node" style="left:14%;top:71%">Other Trades</div>
+      <div class="hub-node" style="left:14%;top:29%">Investors</div>
+    </div>
+    <div>
+      <span class="eyebrow">Referral network</span>
+      <h2 style="font-size:clamp(2rem,4.5vw,3rem);color:var(--navy)">The people who send work</h2>
+      <p style="color:var(--muted);font-size:1.08rem">Every home sale, refinance, insurance claim, and investor rehab needs a contractor. The Trades Chapter connects you directly with the professionals who are asked for a good tradesperson every single week.</p>
+      <ol class="steps">
+        <li><h4>Get listed</h4><p>Your company goes into the member directory by trade and service area.</p></li>
+        <li><h4>Meet face to face</h4><p>Monthly chapter meetings put you in the room with agents, lenders, and other trades.</p></li>
+        <li><h4>Trade referrals</h4><p>Pass work to members you trust and get work passed back to you.</p></li>
+        <li><h4>Track and follow up</h4><p>Your AI Lead Manager makes sure every referral gets a fast call back.</p></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- TRAINING -->
+<section class="section bg-soft" id="training">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Training</span>
+      <h2>Sharpen the business side</h2>
+      <p>Practical training taught by people who have run crews, pulled permits, and built companies, not by people who've only read about it.</p>
+    </div>
+    <div class="grid g4">
+      <div class="card"><div class="ico">📐</div><h3>Estimating &amp; Bidding</h3><p>Price jobs to win and still make a profit.</p></div>
+      <div class="card"><div class="ico">📝</div><h3>Contracts &amp; Licensing</h3><p>Protect yourself with the right paperwork, licenses, and change orders.</p></div>
+      <div class="card"><div class="ico">⛑️</div><h3>Safety &amp; OSHA</h3><p>Keep your crew safe and your business compliant.</p></div>
+      <div class="card"><div class="ico">👷</div><h3>Hiring &amp; Apprentices</h3><p>Find, train, and keep good people, including through the B.U.I.L.D. IT Apprenticeship Program.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERSHIP -->
+<section class="section" id="membership">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Membership</span>
+      <h2>Pick your level</h2>
+      <p>From one-person shops to established contractors, there's a membership built for where you are right now.</p>
+    </div>
+    <div class="grid g4">
+      <div class="tier">
+        <h3>Associate</h3><div class="who">Workers, apprentices &amp; new starters</div>
+        <div class="price">$199<small> /year</small></div>
+        <ul><li>Monthly chapter meetings</li><li>Training workshops</li><li>Business startup guidance</li><li>Member community</li></ul>
+        <a href="#join" class="btn btn-navy">Join as Associate</a>
+      </div>
+      <div class="tier">
+        <h3>Business</h3><div class="who">Owner-operators &amp; small crews</div>
+        <div class="price">$499<small> /year</small></div>
+        <ul><li>Everything in Associate</li><li>Directory listing</li><li>Referral network access</li><li>Monthly AI Clinic</li></ul>
+        <a href="#join" class="btn btn-navy">Join as Business</a>
+      </div>
+      <div class="tier featured">
+        <span class="tag">Most popular</span>
+        <h3>Professional</h3><div class="who">Growing companies</div>
+        <div class="price">$999<small> /year</small></div>
+        <ul><li>Everything in Business</li><li>Featured directory placement</li><li>Capital readiness review</li><li>Priority referrals</li><li>1-on-1 business mentoring</li></ul>
+        <a href="#join" class="btn btn-gold">Join as Professional</a>
+      </div>
+      <div class="tier">
+        <h3>Corporate</h3><div class="who">Established firms &amp; sponsors</div>
+        <div class="price">$2,500<small>+ /year</small></div>
+        <ul><li>Everything in Professional</li><li>Event sponsorship &amp; speaking</li><li>Team memberships</li><li>Brand placement on site &amp; events</li></ul>
+        <a href="#join" class="btn btn-navy">Become a Sponsor</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEETINGS -->
+<section class="section bg-soft" id="meetings">
+  <div class="wrap meet">
+    <div>
+      <span class="eyebrow">Monthly meetings</span>
+      <h2 style="font-size:clamp(2rem,4.5vw,3rem);color:var(--navy);margin-bottom:14px">Get in the room</h2>
+      <p style="color:var(--muted);font-size:1.08rem">Every month the chapter meets in person, with a virtual option for members who can't make it. Real conversations, real referrals, and one solid topic you can use on Monday morning.</p>
+      <div class="topics"><span>Estimating</span><span>Contracts</span><span>Hiring</span><span>OSHA</span><span>Marketing</span><span>Financing</span><span>AI Tools</span><span>Government Bids</span></div>
+      <p style="margin-top:24px;color:var(--muted)">Meeting dates and locations are sent to everyone who signs up below.</p>
+    </div>
+    <div class="agenda">
+      <h3>A typical meeting</h3>
+      <div class="agenda-row"><b>Open</b><span>Networking and introductions</span></div>
+      <div class="agenda-row"><b>Learn</b><span>Featured topic and Q&amp;A</span></div>
+      <div class="agenda-row"><b>Share</b><span>Member spotlights and wins</span></div>
+      <div class="agenda-row"><b>Refer</b><span>Open referral round</span></div>
+      <div class="agenda-row"><b>Close</b><span>One-on-one connections</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- JOIN -->
+<section class="section join" id="join">
+  <div class="wrap join-grid">
+    <div>
+      <span class="eyebrow" style="color:#fff">Join the chapter</span>
+      <h2>Let's build your business</h2>
+      <p>Tell us about you and your company. We'll reach out to get you set up and invite you to the next meeting.</p>
+      <ol class="next">
+        <li><b>Sign up</b><span>Fill out the short form. It takes two minutes.</span></li>
+        <li><b>We call you</b><span>We'll learn about your business and recommend the right membership.</span></li>
+        <li><b>Show up</b><span>Come to your first chapter meeting and start building relationships.</span></li>
+      </ol>
+      <p class="founding"><strong>Founding members:</strong> join now and help shape the chapter from day one.</p>
+      <p style="margin-top:20px">Questions? Call <a href="tel:+15167103374" style="text-decoration:underline">516-710-3374</a> or email <a href="mailto:todd@toddeliott.com" style="text-decoration:underline">todd@toddeliott.com</a></p>
+    </div>
+    <form id="joinForm">
+      <h3>Membership interest</h3>
+      <div class="fs-title">About you</div>
+      <div class="row2">
+        <div><label for="fn">First name</label><input id="fn" name="First name" required></div>
+        <div><label for="ln">Last name</label><input id="ln" name="Last name" required></div>
+      </div>
+      <div class="row2">
+        <div><label for="ph">Phone</label><input id="ph" name="Phone" type="tel" required></div>
+        <div><label for="em">Email</label><input id="em" name="Email" type="email" required></div>
+      </div>
+      <div class="fs-title">Your business</div>
+      <div class="row2">
+        <div><label for="co">Company name</label><input id="co" name="Company"></div>
+        <div><label for="ar">Service area</label><input id="ar" name="Service area" placeholder="Town or county"></div>
+      </div>
+      <label for="st">Where are you right now?</label>
+      <select id="st" name="Stage">
+        <option>Thinking about starting a business</option>
+        <option>Owner-operator / small crew</option>
+        <option>Established company looking to grow</option>
+        <option>Real estate, lending, or insurance pro</option>
+      </select>
+      <label for="tier">Membership interest</label>
+      <select id="tier" name="Membership">
+        <option>Not sure yet</option><option>Associate ($199/yr)</option><option>Business ($499/yr)</option><option>Professional ($999/yr)</option><option>Corporate ($2,500+/yr)</option>
+      </select>
+      <label>What do you want help with?</label>
+      <div class="checks">
+        <label><input type="checkbox" name="Help" value="Leads"> Leads</label>
+        <label><input type="checkbox" name="Help" value="Capital"> Capital</label>
+        <label><input type="checkbox" name="Help" value="AI Executive Team"> AI Executive Team</label>
+        <label><input type="checkbox" name="Help" value="Training"> Training</label>
+        <label><input type="checkbox" name="Help" value="Starting a business"> Starting a business</label>
+        <label><input type="checkbox" name="Help" value="Hiring"> Hiring</label>
+      </div>
+      <label for="msg">Anything else?</label>
+      <textarea id="msg" name="Message" rows="3"></textarea>
+      <label class="consent"><input type="checkbox" required> I agree to be contacted by The Trades Chapter by phone, text, or email about membership and events.</label>
+      <button type="submit" class="btn btn-gold">Send My Info →</button>
+      <p class="form-note">Submitting opens a pre-filled email to the chapter. Just hit send.</p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>The Trades Chapter</h4>
+        <p>A chapter of the National Small Business Chamber of Commerce, built for contractors and skilled tradespeople.</p>
+        <p style="margin-top:12px">555 Broadhollow Road #327<br>Melville, NY 11747</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul><li><a href="#ai-team">AI Executive Team</a></li><li><a href="#capital">Capital</a></li><li><a href="#referrals">Referral Network</a></li><li><a href="#training">Training</a></li></ul>
+      </div>
+      <div>
+        <h4>Get Involved</h4>
+        <ul><li><a href="#membership">Membership</a></li><li><a href="#meetings">Meetings</a></li><li><a href="#join">Join Now</a></li></ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul><li><a href="tel:+15167103374">516-710-3374</a></li><li><a href="mailto:todd@toddeliott.com">todd@toddeliott.com</a></li><li><a href="https://nationalsmallbusinesschamber.com" target="_blank" rel="noopener">NSBCC</a></li></ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 The Trades Chapter · National Small Business Chamber of Commerce · TradesChapter.com</span>
+      <span>Build · Connect · Grow</span>
+    </div>
+    <p class="disclaimer">Financing is provided by independent lenders and is subject to their approval. The Trades Chapter does not guarantee loan approval, job volume, or referrals. AI tools are provided through partner AI Cooperative Group.</p>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('#links a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('links').classList.remove('open')})});
+  document.getElementById('joinForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var f=e.target, lines=[], help=[];
+    f.querySelectorAll('input[name],select[name],textarea[name]').forEach(function(el){
+      if(el.type==='checkbox'){ if(el.checked) help.push(el.value); return; }
+      if(el.value) lines.push(el.name+': '+el.value);
+    });
+    if(help.length) lines.push('Help with: '+help.join(', '));
+    var subject='Trades Chapter Membership - '+f.querySelector('#fn').value+' '+f.querySelector('#ln').value;
+    window.location.href='mailto:todd@toddeliott.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(lines.join('\n'));
+  });
+</script>
+</body>
+</html>
